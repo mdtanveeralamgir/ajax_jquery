@@ -14,12 +14,13 @@ $("form").submit(function(event){
     });
 });
 */
+
 // Making a put req
+/*
 $("form").submit(function (event) {
   event.preventDefault();
   var formData = $(this).serialize();
   var formAction = $(this).attr("action");
-  //param("url", "dataToServer", "datafromServer")
   $.ajax({
     url: formAction,
     data: formData,
@@ -29,3 +30,19 @@ $("form").submit(function (event) {
     },
   });
 });
+*/
+
+// Making a delete request
+$("form").submit(function (event) {
+    event.preventDefault();
+    var formAction = $(this).attr("action");
+    $.ajax({
+      url: formAction,
+      type: "DELETE",
+      success: function (data) {
+          console.log(data);
+      },
+    });
+  });
+
+
